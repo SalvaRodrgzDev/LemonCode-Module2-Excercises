@@ -28,25 +28,47 @@ function merge(target, source) {
     // return {...source, ...target};
 }
 
-let object1 = { 
-    name: "Asd",
-    lastname: "QWE",
-    coords: {
-        x: 0.23415235,
-        y: 1.35464567
+let jon = { 
+    name: "Jon",
+    lastname: "Doe",
+    direccion: {
+        calle: "Pintor Sorolla",
+        cp: 29603,
+        numero: 31
     }
 }
 
-let object2 = deepClone(object1);
+let jane = {
+    name: "Jane",
+    lastname: "Doe",
+    direccion: {
+        calle: "Pintor Sorolla",
+        cp: 29603,
+        numero: 31
+    }
+}
 
-console.log(object1.coords, object2);
+let clonJon = clone(jon);
+clonJon.direccion.numero = 33;
 
-object1.coords.x = 88;
-
-console.log(object1.coords, object2);
-
+let clonJane = deepClone(jane);
+clonJane.direccion.numero = 33;
 
 const a = {name: 'Maria', surname: 'Ibañez', country: 'SPA', }
 const b = {name: 'Luisa', age: 31, married: true};
 
+console.log(`
+
+
+EJERCICIO 3
+Jon clonado y modificado:`);
+
+console.table(jon);
+console.table(clonJon);
+
+console.log("Jane clonado profundo y modificada:");
+console.table(jane);
+console.table(clonJane);
+
+console.log("Merge María y Luisa:");
 console.log(merge(a, b));

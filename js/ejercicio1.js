@@ -1,15 +1,26 @@
-const head = ( [first] = arr) => first;
+const Ejercicio1 = (() => ({
+        head: ( [first] = arr) => first,
 
-const tail = ( [first, ...tail] ) => tail;
+        tail: ( [, ...tail] ) => tail,
 
-const Init = arr => arr.slice(0, -1);
+        init: arr => arr.slice(0, -1),
 
-const last = arr => arr[arr.length - 1]
+        last: arr => arr[arr.length - 1],
+}))();
 
 const arr = [1,2,3,4,5,6]
 
-let lastElement = last(arr);
+const head = Ejercicio1.head(arr);
 
-lastElement = 67;
+const tail = Ejercicio1.tail(arr);
 
-console.log(arr, lastElement);
+const init = Ejercicio1.init(arr);
+
+const last = Ejercicio1.last(arr);
+
+console.log(`EJERCICIO 1
+Array original: `);
+console.table({arr});
+console.log("head = ", head);
+console.log("last = ", last);
+console.table( {tail, init});

@@ -4,11 +4,18 @@ const books = [
     {title: "Devastación", isRead: true},
 ];
 
-const isBookRead = (books, titleToSearch) => books.some(book => 
-    book.title === titleToSearch && book.isRead
+const isBookRead = (books, titleToSearch) => 
+                            books.some(book => 
+                                book.title === titleToSearch && book.isRead
 );
 
-console.log(isBookRead(books, "Devastación")); // true
-console.log(isBookRead(books, "Canción de hielo y fuego")); // false
-console.log(isBookRead(books, "Los Pilares de la Tierra")); // false
-console.log(isBookRead(books, "Harry Potter y la piedra filosofal")); // false
+console.log(`
+
+
+EJERICIO 4
+Colección de libros:`);
+console.table(books);
+console.log(`isBookRead(books, "Devastación") resultado ${isBookRead(books, "Devastación")}`);
+console.log(`isBookRead(books, "Canción de hielo y fuego") resultado ${isBookRead(books, "Canción de hielo y fuego")}`);
+console.log(`isBookRead(books, "Los Pilares de la Tierra") resultado ${isBookRead(books, "Los Pilares de la Tierra")}`);
+console.log(`isBookRead(books, "Harry Potter y la piedra filosofal") resultado ${isBookRead(books, "Harry Potter y la piedra filosofal")}`);
